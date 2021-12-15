@@ -1,0 +1,18 @@
+    body {
+        padding: 10px;
+        margin: 10px;
+    }
+    
+    .ingreso {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .accordion-body {
+        background: rgb(236, 236, 235);
+    }
