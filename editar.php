@@ -92,7 +92,7 @@ include './estructura/cabecera.php';
             </div>
         </div>
 
-        <!------------------------------------ Hasta aqui Acordeon para ingreso de Tareas--------------------------------------------->
+        <!---------- Comentario-------------------------- Hasta aqui Acordeon para ingreso de Tareas--------------------------------------------->
 
         <?php
 
@@ -111,7 +111,7 @@ include './estructura/cabecera.php';
                 <td>REVISION</td>
                 <td>EDITAR</td>
                 <td>ELIMINAR</td>
-            </tr>
+              </tr>    
             <?php
             foreach ($datosTareas as $item) {
             ?>
