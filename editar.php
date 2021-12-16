@@ -49,7 +49,9 @@ include './estructura/cabecera.php';
         <div class="col-md-3">
             <input type="hidden" name="oculto">
             <input type="hidden" name="id2" value="<?php echo $agenda->id; ?>"></td>
+            <td colspan="2"><button class="btn btn-primary" onclick="location='index.php'">INICIO</button></td>
             <td colspan="2"><input type="submit" class="btn btn-secondary btn-sm ml-auto" value="EDITAR"></td>
+            
         </div>
     </form>
 
@@ -84,44 +86,42 @@ include './estructura/cabecera.php';
                             <input type="text" name="txtComentario" style="width : 850px;" required>
                         </div>
 
-                        <div class="col-md-3">
+                        
                             <imput type="hidden" name="oculto" value="1">
-                                <td><input type="submit" class="btn btn-secondary btn-sm ml-auto" value="INGRESAR"></td>
-                        </div>
+                            <td><input type="submit" class="btn btn-secondary btn-sm ml-auto" value="INGRESAR"></td>
+                        
                 </div>
             </div>
         </div>
-
-        <!---------- Comentario-------------------------- Hasta aqui Acordeon para ingreso de Tareas--------------------------------------------->
+        <!------------------------------------ Hasta aqui Acordeon para ingreso de Tareas--------------------------------------------->
 
         <?php
 
-        $sentancia = $bd->query("SELECT * FROM tareas;");
+        $sentancia = $bd->query("SELECT id,fechaLimite,nomtarea,comentario FROM tareas WHERE CodPro= $id;");
         $datosTareas = $sentancia->fetchAll(PDO::FETCH_OBJ);
 
         ?>
-
+        <br>
         <table id="" class="table table-striped table-bordered border border-2" style="width:100%">
             <h5 Style="text-align:center">Tareas</h5>
             <tr>
                 <td>ID</td>
                 <td>FECHA LIMITE</td>
                 <td>TAREA</td>
-                <td>COMENTARIOS</td>
-                <td>REVISION</td>
+                <td>COMENTARIOS</td>                
                 <td>EDITAR</td>
                 <td>ELIMINAR</td>
-              </tr>    
+            </tr>
             <?php
             foreach ($datosTareas as $item) {
             ?>
                 <tr>
-                    <td> <?php echo $item->id; ?> </td>                    
+                    <td> <?php echo $item->id; ?> </td>
                     <td> <?php echo $item->fechaLimite; ?> </td>
                     <td> <?php echo $item->nomtarea; ?> </td>
-                    <td> <?php echo $item->comentario; ?> </td>                    
-                    <td><a class="btn btn-secondary" href="editar.php?id=<?php echo $item->id; ?>">Editar</a></td>
-                    <td><a class="btn btn-danger" href="eliminar.php?id=<?php echo $item->id; ?>">Eliminar</a></td>
+                    <td> <?php echo $item->comentario; ?> </td>
+                    <td><a class="btn btn-secondary" href="">Editar</a></td>
+                    <td><a class="btn btn-danger" href="eliminarTareas.php?id=<?php echo $item->id; ?>">Eliminar</a></td>
                 </tr>
             <?php
             }

@@ -51,7 +51,7 @@ include './estructura/cabecera.php';
                         <td>NOMBRE PROYECTO</td>
                         <td>FECHA ENTREGA </td>
                         <td>DESCRIPCION</td>
-                        <td>EDITAR</td>
+                        <td>TAREAS</td>
                         <td>ELIMINAR</td>
                     </tr>
                     <?php
@@ -63,7 +63,7 @@ include './estructura/cabecera.php';
                             <td> <?php echo $item->nomProyecto; ?> </td>
                             <td> <?php echo $item->fechaEntrega; ?> </td>
                             <td> <?php echo $item->descripcion; ?> </td>
-                            <td><a class="btn btn-secondary" href="editar.php?id=<?php echo $item->id; ?>">Editar</a></td>
+                            <td><a class="btn btn-secondary" href="editar.php?id=<?php echo $item->id; ?>">Tareas</a></td>
                             <td><a class="btn btn-danger" href="eliminar.php?id=<?php echo $item->id; ?>">Eliminar</a></td>
                         </tr>
                     <?php
